@@ -2,7 +2,9 @@ const http = require('http');
 
 const server = http.createServer((req, res)=>{
     if(req.url == '/'){
-        res.end('Welcome to out home page')
+        res.write('Welcome to out home page')
+        // console.log(req)
+        res.end()
     }
     else if(req.url =="/about"){
         res.end('Heres our short history')
@@ -13,6 +15,10 @@ const server = http.createServer((req, res)=>{
         <a href="/">Back home</a>
         `
         )}
+    console.log(req); // displays the req
+    
 })
 
 server.listen(5000)
+
+
